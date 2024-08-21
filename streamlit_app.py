@@ -9,14 +9,14 @@ from PIL import ImageOps
 import pathlib
 
 def main():
-    st.title('Peru Fish Classifier')
+    st.title('CWS Wildcat Example Classifier')
 
     for filename in EXTERNAL_DEPENDENCIES.keys():
         download_file(filename)
     
     model = load_model()
     
-    st.markdown("Fish photo for classification.")
+    st.markdown("Wildcate photo for classification.")
     image = st.file_uploader("", IMAGE_TYPES)
     if image:
         image_data = image.read()
@@ -56,7 +56,7 @@ def load_model():
     plt = platform.system()
 
     if plt == 'Linux' or plt == 'Darwin': pathlib.WindowsPath = pathlib.PosixPath
-    inf_model = load_learner('perumixed3.pkl', cpu=True)
+    inf_model = load_learner('example_cws_1.pkl', cpu=True)
 
     return inf_model
 
@@ -103,9 +103,9 @@ def download_file(file_path):
 IMAGE_TYPES = ["png", "jpg"]
 
 EXTERNAL_DEPENDENCIES = {
-    "perumixed3.pkl": {
-        "url": "https://www.dropbox.com/s/31e6wuwrlm66sco/perumixed3.pkl?dl=1",
-        "size": 179319095
+    "example_cws_1.pkl": {
+        "url": "https://drive.google.com/file/d/1VHo_Kk00_BYqxJdV5QEMIWUOt0CBFLSC/view?usp=drive_link",
+        "size": 179191543
     }
 }
 
