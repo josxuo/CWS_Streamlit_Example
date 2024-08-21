@@ -16,7 +16,7 @@ def main():
     
     model = load_model()
     
-    st.markdown("Wildcate photo for classification.")
+    st.markdown("Wildcat photo for classification.")
     image = st.file_uploader("", IMAGE_TYPES)
     if image:
         image_data = image.read()
